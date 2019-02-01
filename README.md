@@ -7,6 +7,6 @@
 * Any additional spaces between words will be maintained.
 
 ## Additional Feature Ideas
-* Maintain punctuation in the middle of a word.
+* Maintain punctuation in the middle of a word.  Not sure if we want the index carrying over, or moving along with the constenant change.  For example, should __can't__ become __an'tcay__ or __ant'cay__?
 * Switch to "Consonant Cluster" version, such that __Scram__ becomes __Amscray__ instead of __Cramsay__
 * Remove any ending vowels prior to conversion, such that __Abba__ becomes __Abbay__ instead of __Abbaay__.
