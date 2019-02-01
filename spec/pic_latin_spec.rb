@@ -1,5 +1,20 @@
 require_relative '../lib/pig_latin'
 
+describe 'to_pig_latin' do
+  it 'converts a word to pig latin' do
+    expect(to_pig_latin('benjamin')).to eq('enjaminbay')
+  end
+  it 'converts a sentence to pig latin' do
+    expect(to_pig_latin('benjamin ate the apple')).to eq('enjaminbay ateay hetay appleay')
+  end
+  it 'maintains capitalization' do
+    expect(to_pig_latin('BenjAmin aTe the apPle')).to eq('EnjaMinbay aTeay hetay apPleay')
+  end
+  it 'maintains punctuation in the beginning or end of the word' do
+    expect(to_pig_latin('!!BenjAmin..   aTe, the%   apPle?')).to eq("!!EnjaMinbay..   aTeay, hetay%   apPleay?")
+  end
+end
+
 describe 'word_to_pig_latin' do
   it 'adds "ay" to the end if word begins with a vowel' do
     expect(word_to_pig_latin('apple')).to eq('appleay')
@@ -12,18 +27,6 @@ describe 'word_to_pig_latin' do
   end
   it 'maintains punctuation at beginning or end of word' do
     expect(word_to_pig_latin('!!BenjAmin..')).to eq('!!EnjaMinbay..')
-  end
-end
-
-describe 'is_capitalized' do
-  it 'returns true if letter is capitalized' do
-    expect(is_capitalized('Y')).to eq(true)
-  end
-  it 'returns false if letter is not capitalized' do
-    expect(is_capitalized('y')).to eq(false)
-  end
-  it 'returns false if not given a letter' do
-    expect(is_capitalized('+')).to eq(false)
   end
 end
 
@@ -45,14 +48,14 @@ describe 'set_capitals' do
   end
 end
 
-describe 'to_pig_latin' do
-  it 'converts a sentence to pig latin' do
-    expect(to_pig_latin('benjamin ate the apple')).to eq('enjaminbay ateay hetay appleay')
+describe 'is_capitalized' do
+  it 'returns true if letter is capitalized' do
+    expect(is_capitalized('Y')).to eq(true)
   end
-  it 'maintains capitalization' do
-    expect(to_pig_latin('BenjAmin aTe the apPle')).to eq('EnjaMinbay aTeay hetay apPleay')
+  it 'returns false if letter is not capitalized' do
+    expect(is_capitalized('y')).to eq(false)
   end
-  it 'maintains punctuation in the beginning or end of the word' do
-    expect(to_pig_latin('!!BenjAmin..   aTe, the%   apPle?')).to eq("!!EnjaMinbay..   aTeay, hetay%   apPleay?")
+  it 'returns false if not given a letter' do
+    expect(is_capitalized('+')).to eq(false)
   end
 end
