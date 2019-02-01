@@ -8,5 +8,5 @@
 
 ## Additional Feature Ideas
 * Maintain punctuation in the middle of a word.
-* Switch to "Consonant Cluster" version, such that "Scram" becomes "Amscray" instead of "Cramsay"
-* Remove any ending vowels prior to conversion, such that "abba" becomes "abbay" instead of "abbaay".
+* Switch to "Consonant Cluster" version, such that __Scram__ becomes __Amscray__ instead of __Cramsay__
+* Remove any ending vowels prior to conversion, such that __Abba__ becomes __Abbay__ instead of __Abbaay__.
