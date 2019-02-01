@@ -11,6 +11,9 @@ describe 'to_pig_latin' do
     expect(to_pig_latin('BenjAmin aTe the apPle')).to eq('EnjaMinbay aTeay hetay apPleay')
   end
   it 'maintains punctuation in the beginning or end of the word' do
+    expect(to_pig_latin('!!BenjAmin.. aTe, the% apPle?')).to eq("!!EnjaMinbay.. aTeay, hetay% apPleay?")
+  end
+  it 'maintains spacing between words' do
     expect(to_pig_latin('!!BenjAmin..   aTe, the%   apPle?')).to eq("!!EnjaMinbay..   aTeay, hetay%   apPleay?")
   end
 end
